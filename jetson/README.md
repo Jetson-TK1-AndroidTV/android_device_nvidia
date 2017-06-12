@@ -1,4 +1,11 @@
-# Device configuration for Nvidia SHIELD Tablet
+```
+# Lineageos Customizer How To:
+# To implement a custom wallpaper for your build replace
+# the image bg_custom.png located in LineageosCustomizer/res/drawable-xhdpi/
+# You can also implement custom tiles/apps by editing strings.xml, config.xml, and
+# PartnerReceiver.java
+```
+# Device configuration for Nvidia Jetson TK1
 
 ## Spec Sheet
 | Feature                 | Specification                     |
@@ -7,16 +14,11 @@
 | Chipset                 | NVIDIA® Tegra K1 T124             |
 | GPU                     | NVIDIA® GK20A (Kepler)            |
 | Memory                  | 2GB RAM                           |
-| Shipped Android Version | 4.4.2                             |
 | Storage                 | 16/32GB                           |
 | MicroSD                 | Up to 128GB                       |
-| Battery                 | 5197 mAh                          |
-| Dimentions              | 221 x 126 x 9.2 mm                |
-| Display                 | 1200 x 1920 pixels                |
-| Release Date            | July 29, 2014                     |
 
 ## Device Picture
-![Nvidia SHIELD Tablet ](http://kodinow.com/wp-content/uploads/2015/09/Nvidia-tablet-679x369.png "Nvidia SHIELD Tablet")
+![Nvidia Jetson TK1 ](http://i1-news.softpedia-static.com/images/news2/NVIDIA-Jetson-TK1-Developer-Kit-a-192-192-Mobile-Supercomputer-434266-2.jpg "Nvidia Jetson TK1")
 
 ## Copyright
 
