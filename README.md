@@ -14,7 +14,7 @@
 | Chipset                 | NVIDIA® Tegra K1 T124             |
 | GPU                     | NVIDIA® GK20A (Kepler)            |
 | Memory                  | 2GB RAM                           |
-| Storage                 | 16/32GB                           |
+| Storage                 | 16GB                              |
 | MicroSD                 | Up to 128GB                       |
 
 ## Device Picture
