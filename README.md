@@ -1,7 +1,7 @@
 ```
-# Lineageos Customizer How To:
+# Leanback Customizer How To:
 # To implement a custom wallpaper for your build replace
-# the image bg_custom.png located in LineageosCustomizer/res/drawable-xhdpi/
+# the image bg_custom.png located in LeanbackCustomize/res/drawable-xhdpi/
 # You can also implement custom tiles/apps by editing strings.xml, config.xml, and
 # PartnerReceiver.java
 ```
