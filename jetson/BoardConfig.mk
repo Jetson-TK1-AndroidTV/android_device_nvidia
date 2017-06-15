@@ -18,6 +18,8 @@
 
 TARGET_SPECIFIC_HEADER_PATH := device/nvidia/jetson/include
 
+BOARD_USES_SHIELDTECH := true
+
 # Architecture
 TARGET_CPU_ABI := armeabi-v7a
 TARGET_CPU_ABI2 := armeabi
@@ -74,18 +76,27 @@ MAX_EGL_CACHE_ENTRY_SIZE := 262144
 TARGET_RECOVERY_FSTAB := device/nvidia/jetson/initfiles/fstab.jetson-tk1
 
 # Wifi related defines
-BOARD_WPA_SUPPLICANT_DRIVER      := NL80211
-WPA_SUPPLICANT_VERSION           := VER_0_8_X
-BOARD_WPA_SUPPLICANT_PRIVATE_LIB := lib_driver_cmd_bcmdhd
-BOARD_WLAN_DEVICE                := bcmdhd
-BOARD_HOSTAPD_DRIVER             := NL80211
-BOARD_HOSTAPD_PRIVATE_LIB        := lib_driver_cmd_bcmdhd
-WIFI_DRIVER_FW_PATH_STA          := "/system/vendor/firmware/fw_bcmdhd.bin"
-WIFI_DRIVER_FW_PATH_AP           := "/system/vendor/firmware/fw_bcmdhd.bin"
-WIFI_DRIVER_FW_PATH_P2P          := "/system/vendor/firmware/fw_bcmdhd.bin"
-WIFI_DRIVER_FW_PATH_PARAM        := "/sys/module/bcmdhd/parameters/firmware_path"
-WIFI_DRIVER_MODULE_ARG           := "iface_name=wlan0"
-WIFI_DRIVER_MODULE_NAME          := "bcmdhd"
+#BOARD_WPA_SUPPLICANT_DRIVER      := NL80211
+#WPA_SUPPLICANT_VERSION           := VER_0_8_X
+#BOARD_WPA_SUPPLICANT_PRIVATE_LIB := lib_driver_cmd_bcmdhd
+#BOARD_WLAN_DEVICE                := bcmdhd
+#BOARD_HOSTAPD_DRIVER             := NL80211
+#BOARD_HOSTAPD_PRIVATE_LIB        := lib_driver_cmd_bcmdhd
+#WIFI_DRIVER_FW_PATH_STA          := "/system/vendor/firmware/fw_bcmdhd.bin"
+#WIFI_DRIVER_FW_PATH_AP           := "/system/vendor/firmware/fw_bcmdhd.bin"
+#WIFI_DRIVER_FW_PATH_P2P          := "/system/vendor/firmware/fw_bcmdhd.bin"
+#WIFI_DRIVER_FW_PATH_PARAM        := "/sys/module/bcmdhd/parameters/firmware_path"
+#WIFI_DRIVER_MODULE_ARG           := "iface_name=wlan0"
+#WIFI_DRIVER_MODULE_NAME          := "bcmdhd"
+
+# Wifi related defines
+BOARD_WLAN_DEVICE := pcie
+CONFIG_CTRL_IFACE := y
+WPA_SUPPLICANT_VERSION := VER_0_8_X
+BOARD_HOSTAPD_DRIVER := NL80211
+BOARD_WPA_SUPPLICANT_DRIVER := NL80211
+BOARD_WPA_SUPPLICANT_PRIVATE_LIB := lib_driver_cmd_pcie
+BOARD_HOSTAPD_PRIVATE_LIB := lib_driver_cmd_pcie
 
 # SELinux
 BOARD_SEPOLICY_DIRS += device/nvidia/jetson/sepolicy

@@ -1,5 +1,5 @@
 #
-# Copyright (C) 2014 The CyanogenMod Project
+# Copyright (C) 2017 The Android Open Source Project
 #
 # Licensed under the Apache License, Version 2.0 (the "License");
 # you may not use this file except in compliance with the License.
@@ -19,6 +19,7 @@ REFERENCE_DEVICE := shieldtablet
 
 $(call inherit-product-if-exists, vendor/nvidia/tegra/core/android/t124/full.mk)
 $(call inherit-product-if-exists, vendor/nvidia/tegra/core/nvidia-tegra-vendor.mk)
+$(call inherit-product-if-exists, vendor/nvidia/shieldtech/common/shieldtech.mk)
 
 # Include drawables for various densities.
 PRODUCT_AAPT_CONFIG := normal large xlarge tvdpi hdpi xhdpi xxhdpi
@@ -35,9 +36,21 @@ PRODUCT_SYSTEM_PROPERTY_BLACKLIST := ro.product.name
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/bootanimation.zip:system/media/bootanimation.zip
 
+# Need AppWidget permission to prevent from Launcher's crash.
+# TODO(pattjin): Remove this when the TV Launcher is used, which does not support AppWidget.
+PRODUCT_COPY_FILES += frameworks/native/data/etc/android.software.app_widgets.xml:system/etc/permissions/android.software.app_widgets.xml
+
 # Overlay
 DEVICE_PACKAGE_OVERLAYS += \
     device/nvidia/jetson/overlay
+
+PRODUCT_PROPERTY_OVERRIDES += \
+    ro.setupwizard.mode=OPTIONAL \
+    ro.com.google.clientidbase=android-nvidia \
+    media.stagefright.cache-params=10240/20480/15 \
+    persist.sys.media.avsync=true \
+    persist.sys.usb.config=mtp \
+    media.aac_51_output_enabled=true
 
 # Ramdisk
 PRODUCT_PACKAGES += \
@@ -91,6 +104,10 @@ PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/audio/audio_policy.conf:system/etc/audio_policy.conf \
     $(LOCAL_PATH)/audio/nvaudio_conf.xml:system/etc/nvaudio_conf.xml \
     $(LOCAL_PATH)/audio/nvaudio_fx.xml:system/etc/nvaudio_fx.xml
+
+PRODUCT_COPY_FILES += \
+    $(LOCAL_PATH)/keylayouts/AliTV_Remote_V1_Airmouse.kl:system/usr/keylayout/AliTV_Remote_V1_Airmouse.kl \
+    $(LOCAL_PATH)/keylayouts/AliTV_Remote_V1_Airmouse.idc:system/usr/idc/AliTV_Remote_V1_Airmouse.idc
 
 # Bluetooth
 PRODUCT_COPY_FILES += \

@@ -276,39 +276,24 @@
                 silence_size="-1"
                 avail_min="1"/>
 
-    <param name="HDMI HW Latency" val="50"/>
+  <param name="HDMI HW Latency" val="50"/>
   </card>
 
   <card name="dummy">
-    <pcm_config name="rsubmix-playback"
-                rate="48000"
-                channels="2"
-                bps="16"
-                period_size="512"
-                period_count="4"/>
-
-    <pcm_config name="rsubmix-capture"
-                rate="48000"
-                channels="2"
-                bps="16"
-                period_size="512"
-                period_count="4"/>
-  </card>
-
-  <card name="dummy">
-    <pcm_config name="usb-blake-playback"
+    <pcm_config name="usb-controller-remote-playback"
                 rate="32000"
                 channels="2"
                 bps="16"
-                period_size="512"
-                period_count="2"
+                period_size="256"
+                period_count="4"
                 start_threshold="1023"
                 stop_threshold="-1"
                 silence_threshold="0"
                 silence_size="-1"
-                avail_min="1"/>
+                avail_min="1"
+                devices="blake"/>
 
-    <pcm_config name="usb-blake-capture"
+    <pcm_config name="usb-controller-remote-capture"
                 rate="16000"
                 channels="1"
                 bps="16"
@@ -316,6 +301,8 @@
                 period_count="2"
                 start_threshold="1023"
                 stop_threshold="1024"
-                avail_min="1"/>
+                avail_min="1"
+                devices="blake-in"/>
   </card>
 </AudioConfigs>
+

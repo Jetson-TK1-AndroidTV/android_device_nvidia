@@ -18,9 +18,10 @@ PRODUCT_PROPERTY_OVERRIDES += \
 PRODUCT_PROPERTY_OVERRIDES += \
     persist.tegra.nvmmlite=1
 
-# USB
-PRODUCT_PROPERTY_OVERRIDES += \
+ # USB
+ PRODUCT_PROPERTY_OVERRIDES += \
     persist.sys.usb.config=mtp,adb
+
 
 # WiFi
 PRODUCT_PROPERTY_OVERRIDES += \
@@ -28,3 +29,5 @@ PRODUCT_PROPERTY_OVERRIDES += \
     wifi.Xinterface=xlan0 \
     ap.interface=wlan0 \
     persist.wlan.ti.calibrated=0
+
+
