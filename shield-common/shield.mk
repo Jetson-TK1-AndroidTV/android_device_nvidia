@@ -90,6 +90,13 @@ PRODUCT_PACKAGES += \
     xaplay \
     libstagefrighthw
 
+# SHIELD Volume Control
+PRODUCT_PACKAGES += \
+    libaudiopolicymanager \
+    libaudiostats
+
+USE_CUSTOM_AUDIO_POLICY := 1
+
 ifneq ($(TARGET_TEGRA_VERSION),t114)
 	PRODUCT_PACKAGES += libtinycompress
 endif

@@ -49,7 +49,7 @@ PRODUCT_PROPERTY_OVERRIDES += \
     ro.com.google.clientidbase=android-nvidia \
     media.stagefright.cache-params=10240/20480/15 \
     persist.sys.media.avsync=true \
-    persist.sys.usb.config=mtp \
+    persist.sys.usb.config=mtp,adb \
     media.aac_51_output_enabled=true
 
 # Ramdisk
